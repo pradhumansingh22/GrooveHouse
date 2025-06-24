@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "GrooveHouse",
     images: [
       {
-        url: "https://groovehouse.vercel.app/preview-image.jpg",
+        url: "/preview-image.png",
         width: 1200,
         height: 630,
         alt: "GrooveHouse preview image",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "GrooveHouse",
     description:
       "A collaborative music room platform where users can join rooms and queue songs to enjoy together in real-time.",
-    images: ["https://groovehouse.vercel.app/preview-image.jpg"],
+    images: ["/preview-image.png"],
   },
 };
 
