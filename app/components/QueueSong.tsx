@@ -4,6 +4,7 @@ import React from "react";
 import { Song } from "./roomDashboard";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import Image from "next/image";
 
 type QueueSongProps = {
   song: Song;
@@ -38,9 +39,11 @@ export const QueueSong: React.FC<QueueSongProps> = ({ song }) => {
       id={song.id}
     >
       <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded overflow-hidden">
-        <img
+        <Image
           src={song.bigImg || "/placeholder.svg?height=60&width=60"}
           alt={song.title}
+          width={40}
+          height={40}
           className="w-full h-full object-cover"
         />
       </div>

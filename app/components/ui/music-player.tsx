@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { Play, Pause } from "lucide-react";
+import Image from "next/image";
 
 let currentlyPlayingAudio: HTMLAudioElement | null = null;
 let currentlyPlayingId: string | null = null;
@@ -61,10 +62,11 @@ export default function MusicPlayer({
       <div className="bg-zinc-950 text-white border-none shadow-xl rounded-lg overflow-hidden">
         <div className="relative group">
           <div className="overflow-hidden">
-            <img
-              src={songCover}
-              onError={(e) => (e.currentTarget.src = "/music.jpg")}
+            <Image
+              src={`/${songCover}`}
               alt={`${songTitle} by ${artist}`}
+              width={400}
+              height={400}
               className="w-full h-auto aspect-square object-cover transition-transform duration-300 group-hover:scale-105 group-hover:brightness-75"
             />
           </div>

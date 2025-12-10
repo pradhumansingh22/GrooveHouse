@@ -6,21 +6,21 @@ export const Featured = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-[3]">
         <MusicPlayer
           id="song-1"
-          songCover="doubletake.jpg"
+          songCover="doubletake.webp"
           songTitle="Double Take"
           artist="Dhruv"
           songUrl="/audio/doubletake.mp3"
         />
         <MusicPlayer
           id="song-2"
-          songCover="miamor.jpg"
+          songCover="miamor.webp"
           songTitle="Mi Amor"
           artist="40k, Sharn, and The Paul"
           songUrl="/audio/miamor.mp3"
         />
         <MusicPlayer
           id="song-3"
-          songCover="snooze.jpg"
+          songCover="snooze.webp"
           songTitle="Snooze"
           artist="SZA"
           songUrl="/audio/snooze.mp3"

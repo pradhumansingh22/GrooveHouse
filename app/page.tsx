@@ -11,7 +11,7 @@ export default async function HomePage() {
     <div className="overflow-x-hidden">
       <div className="p-2 sm:p-4 box-border">
         <div
-          className={`${OpenSans.className}relative w-full min-h-screen bg-[url('/bg.png')] bg-cover bg-center rounded-lg sm:rounded-2xl`}
+          className={`${OpenSans.className}relative w-full min-h-screen bg-[url('/bg.webp')] bg-cover bg-center rounded-lg sm:rounded-2xl`}
         >
           <Appbar />
           <div className="pt-8 sm:pt-12 md:pt-16 lg:pt-20 px-4 sm:px-8 md:px-12 lg:px-20 pb-36 sm:pb-0">

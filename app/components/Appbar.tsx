@@ -4,6 +4,7 @@ import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useCurrentSongQueue } from "../lib/store/myStore";
 import { useEffect } from "react";
+import Image from "next/image";
 
 export const Appbar = () => {
   const { data: session, status } = useSession();
@@ -77,9 +78,11 @@ export const Appbar = () => {
             {user ? "Log Out" : "Log In"}
           </button>
           {user?.image && (
-            <img
+            <Image
               src={user.image || "/placeholder.svg"}
               alt="User Avatar"
+              width={32}
+              height={32}
               className="w-8 h-8 rounded-full border object-cover"
             />
           )}

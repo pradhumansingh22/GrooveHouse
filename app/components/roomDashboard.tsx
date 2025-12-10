@@ -20,6 +20,7 @@ import { Queue } from "./Queue";
 import ErrorAlert from "./ui/ErrorAlert";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { CopyButton } from "./ui/copyButton";
+import Image from "next/image";
 
 export interface Song {
   id: string;
@@ -455,7 +456,7 @@ export default function MusicRoomDashboard() {
               <Card className="w-full max-w-xs sm:max-w-sm flex items-center justify-center bg-[#2E3F3C]/10 border-[#2E3F3C] rounded-md p-3 sm:p-4">
                 <div className="flex flex-col items-center w-full">
                   <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 mb-3 sm:mb-4 rounded-md overflow-hidden">
-                    <img
+                    <Image
                       src={
                         currentSong.bigImg ||
                         "/placeholder.svg?height=200&width=200" ||
@@ -464,6 +465,8 @@ export default function MusicRoomDashboard() {
                         "/placeholder.svg"
                       }
                       alt={currentSong.title}
+                      width={192}
+                      height={192}
                       className="w-full h-full object-cover"
                     />
                   </div>
