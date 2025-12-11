@@ -29,11 +29,27 @@ interface JoinedState {
   hasJustJoined: boolean;
   setHasJustJoined: (value: boolean) => void;
 }
+interface memberCount {
+  memberCount : number;
+  setMemberCount: (count: number) => void;
+}
 
 export const useJoinedStore = create<JoinedState>((set) => ({
   hasJustJoined: false,
   setHasJustJoined: (value) => set({ hasJustJoined: value }),
 }));
+
+export const useMemberCountStore = create<memberCount>()(
+  persist(
+    (set) => ({
+      memberCount: 0,
+      setMemberCount: (count) => set({ memberCount:count }),
+    }),
+    {
+      name: "members-count-store",
+    }
+  )
+);
 
 export const useRoomIdStore = create<roomIdStore>()(
   persist(
@@ -46,6 +62,7 @@ export const useRoomIdStore = create<roomIdStore>()(
     }
   )
 );
+
 export const useRoomStore = create<roomStore>((set) => ({
   room: {
     id: "",

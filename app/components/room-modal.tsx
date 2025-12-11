@@ -68,7 +68,8 @@ export function RoomModal({ isOpen, onClose }: RoomModalProps) {
         setTimeout(() => {
           setLoading(false);
         }, 5000);
-      } // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       if (error.response.status === 403 || error.response.status === 400)
         setError(true);
@@ -86,7 +87,7 @@ export function RoomModal({ isOpen, onClose }: RoomModalProps) {
     const formatted = rawInput.match(/.{1,3}/g)?.join("-") || "";
 
     setValue(formatted);
-    setCreateRoomId(formatted);
+    setCreateRoomId(formatted); 
     setjoinRoomId(formatted);
   };
 
