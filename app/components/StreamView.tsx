@@ -7,6 +7,7 @@ import { Input } from "./ui/input";
 import { Card } from "./ui/card";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { Avatar, AvatarFallback } from "./ui/avatar";
+import Image from "next/image";
 
 // Types
 interface Song {
@@ -182,9 +183,11 @@ export default function MusicRoomDashboard() {
                     className="flex items-center gap-3 p-2 rounded-md hover:bg-[#2E3F3C]/10"
                   >
                     <div className="flex-shrink-0 w-10 h-10 rounded overflow-hidden">
-                      <img
+                      <Image
                         src={song.thumbnail || "/placeholder.svg"}
                         alt={song.title}
+                        width={40}
+                        height={40}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -231,9 +234,11 @@ export default function MusicRoomDashboard() {
           <div className="flex flex-col items-center gap-4">
             <Card className="w-full max-w-md flex flex-col items-center justify-center bg-[#2E3F3C]/10 border-[#2E3F3C] rounded-md p-4">
               <div className="w-36 h-36 mb-3 rounded-md overflow-hidden">
-                <img
+                <Image
                   src={currentSong.thumbnail || "/placeholder.svg"}
                   alt={currentSong.title}
+                  width={144}
+                  height={144}
                   className="w-full h-full object-cover"
                 />
               </div>
