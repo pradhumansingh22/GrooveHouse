@@ -21,6 +21,7 @@ import ErrorAlert from "./ui/ErrorAlert";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
 import { CopyButton } from "./ui/copyButton";
 import Image from "next/image";
+import SocketLoader from "./ui/socketLoader";
 
 export interface Song {
   id: string;
@@ -49,6 +50,7 @@ export default function MusicRoomDashboard() {
   const session = useSession();
   const userName = session.data?.user?.name;
   const [socket, setSocket] = useState<WebSocket | null>(null);
+  const [socketConnected, setSocketConnected] = useState<boolean>(false);
   const { createRoomId } = useRoomIdStore();
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [songLink, setSongLink] = useState("");
@@ -123,6 +125,7 @@ export default function MusicRoomDashboard() {
       "wss://groovehouse-server.onrender.com/"
     );
     newSocket.onopen = () => {
+      setSocketConnected(true);
       console.log("Connection established to the WebSocket server.");
       newSocket.send(
         JSON.stringify({
@@ -328,7 +331,11 @@ export default function MusicRoomDashboard() {
     });
   };
 
- // console.log("iscreator: ", isCreator);
+  // console.log("iscreator: ", isCreator);
+  
+  if (!socketConnected) {
+    return <SocketLoader/>
+  }
 
   return (
     <>
